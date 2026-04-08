@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | كل الكورسات</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+    <style> body { background-color: #fcfbf9; display: flex; flex-direction: column; min-height: 100vh; } .nav-link { transition: all 0.3s ease; position: relative; } .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; right: 0; background-color: #015c3a; transition: width 0.3s ease; } .nav-link:hover::after, .nav-link.active::after { width: 100%; } .nav-link.active { color: #015c3a; font-weight: 700; } </style>
+</head>
+<body class="text-brand-dark">
+
+    <!-- Auth Lock Screen -->
+    <div id="authLock" class="fixed inset-0 z-[100] bg-[#fcfbf9]/95 backdrop-blur-sm flex flex-col items-center justify-center hidden">
+        <div class="w-24 h-24 bg-brand-secondary text-brand-primary rounded-full flex items-center justify-center mb-6 border-4 border-brand-primary/20 shadow-lg">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        </div>
+        <h2 class="text-3xl font-bold text-brand-dark mb-4">المحتوى مقفول 🔒</h2>
+        <p class="text-slate-600 mb-8 font-medium text-lg">يجب عليك تسجيل الدخول أولاً للوصول إلى الكورسات.</p>
+        <button onclick="localStorage.setItem('kameshkah_auth', 'true'); window.location.reload();" class="px-8 py-4 bg-brand-primary text-white font-bold text-lg rounded-xl shadow-lg hover:bg-opacity-90 transition-all">تسجيل الدخول الآن</button>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2"><img src="Untitled-1.jpg" alt="شعار" class="h-12 object-contain mix-blend-multiply"></a>
+            <nav class="hidden md:flex gap-8 items-center font-medium text-slate-600">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="courses.html" class="nav-link active">الكورسات</a>
+                <a href="about.html" class="nav-link hover:text-brand-primary">من نحن</a>
+            </nav>
+            <div class="hidden md:flex gap-3">
+                <button id="loginBtn" onclick="toggleAuth()" class="px-6 py-2 rounded-lg border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-secondary transition-colors">تسجيل الخروج</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-16">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">اختر مسار تعلمك</h1>
+                <div class="w-24 h-1.5 bg-brand-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Udemy Courses Card -->
+                <a href="courses-udemy.html" class="group block bg-white rounded-3xl p-10 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-primary/30 transition-all text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-white px-4 py-1 rounded-bl-xl font-bold text-sm">متاح الآن</div>
+                    <div class="w-20 h-20 bg-teal-50 text-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-brand-dark mb-4">كورسات Udemy</h3>
+                    <p class="text-slate-600 font-medium mb-8">الكورسات العملية المتوفرة حالياً لتعلم مهارات التصميم والسوشيال ميديا.</p>
+                    <span class="inline-flex items-center gap-2 text-brand-primary font-bold">ابدأ التعلم <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                </a>
+
+                <!-- Kameshkah Courses Card -->
+                <a href="courses-kameshkah.html" class="group block bg-white rounded-3xl p-10 border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-accent/30 transition-all text-center relative overflow-hidden opacity-90">
+                    <div class="absolute top-0 right-0 bg-slate-800 text-white px-4 py-1 rounded-bl-xl font-bold text-sm">قريباً 🔥</div>
+                    <div class="w-20 h-20 bg-brand-secondary text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-brand-dark mb-4 text-slate-500">كورسات كمشكاة</h3>
+                    <p class="text-slate-600 font-medium mb-8">برامج متكاملة تجمع بين الجانب التقني وتطوير الذات.. تجربة مختلفة كلياً.</p>
+                    <span class="inline-flex items-center gap-2 text-slate-400 font-bold">اكتشف المزيد <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-dark text-slate-300 py-8 mt-auto border-t-4 border-brand-primary text-center">
+        <p class="text-sm font-medium">&copy; <span id="year"></span> كمشكاة تعلّم.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Auth Lock Logic
+        function checkAuth() {
+            const isLoggedIn = localStorage.getItem('kameshkah_auth') === 'true';
+            const authLock = document.getElementById('authLock');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            if (!isLoggedIn) {
+                authLock.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                if(loginBtn) loginBtn.innerText = 'تسجيل الدخول';
+            } else {
+                authLock.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                if(loginBtn) {
+                    loginBtn.innerText = 'تسجيل الخروج';
+                    loginBtn.classList.replace('text-brand-primary', 'text-red-500');
+                    loginBtn.classList.replace('border-brand-primary', 'border-red-500');
+                }
+            }
+        }
+
+        function toggleAuth() {
+            if (localStorage.getItem('kameshkah_auth') === 'true') {
+                localStorage.setItem('kameshkah_auth', 'false');
+            } else {
+                localStorage.setItem('kameshkah_auth', 'true');
+            }
+            window.location.reload();
+        }
+
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* تنسيقات خاصة بصفحات الكورسات */
+
+/* كروت الكورسات في صفحة يوديمي */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.course-card-image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.course-card-image-wrapper svg {
+    transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-card-image-wrapper svg {
+    transform: scale(1.1);
+}
+
+/* شاشة قفل المحتوى لغير المسجلين */
+#authLock {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(252, 251, 249, 0.85);
+}
+
+/* تفاصيل الكورس: تصميم مشغل الفيديو الوهمي */
+.video-placeholder {
+    position: relative;
+    background-color: var(--brand-dark);
+    overflow: hidden;
+}
+
+.video-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(1,92,58,0.2) 0%, rgba(234,88,12,0.1) 100%);
+    pointer-events: none;
+}
+
+.play-button {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.play-button:hover {
+    transform: scale(1.15);
+}
+
+/* تصميم قائمة (ماذا ستتعلم) */
+.curriculum-list li {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.curriculum-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}

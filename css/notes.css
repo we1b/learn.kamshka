@@ -1,0 +1,60 @@
+/* تنسيقات خاصة بنظام الملاحظات */
+
+/* كارت الملاحظة في صفحة كل الملاحظات */
+.note-card {
+    position: relative;
+    z-index: 1;
+}
+
+.note-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(1, 92, 58, 0.02));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.note-card:hover::before {
+    opacity: 1;
+}
+
+/* محرر الملاحظات */
+.note-editor-title {
+    background: transparent;
+    border: none;
+}
+
+.note-editor-title::placeholder {
+    color: #cbd5e1;
+}
+
+.note-editor-body {
+    background: transparent;
+    border: none;
+    resize: none;
+}
+
+.note-editor-body::placeholder {
+    color: #cbd5e1;
+}
+
+/* إخفاء شريط التمرير داخل المحرر ليكون شكله أنظف */
+.note-editor-body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* تخصيص قائمة التصنيفات المنسدلة */
+.category-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23015c3a'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 0.5rem center;
+    background-size: 1.2rem;
+    padding-left: 2rem;
+}

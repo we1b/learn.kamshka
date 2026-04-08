@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | الشروط والأحكام</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-[#fcfbf9] text-brand-dark font-sans flex flex-col min-h-screen">
+    
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-brand-primary">الشروط والأحكام</h1>
+            <a href="index.html" class="text-sm font-bold text-slate-500 hover:text-brand-primary transition-colors">العودة للرئيسية</a>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 prose prose-slate prose-a:text-brand-primary max-w-none">
+                <p class="text-sm text-slate-400 font-bold mb-8">آخر تحديث: أغسطس 2025</p>
+
+                <p class="text-slate-600 font-medium leading-relaxed mb-8">
+                    مرحباً بك في منصة كمشكاة. باستخدامك لموقعنا، فإنك توافق على الالتزام بالشروط والأحكام التالية. يُرجى قراءتها بعناية.
+                </p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">1. استخدام المنصة</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    المحتوى المقدم على منصة كمشكاة هو للأغراض التعليمية والتطوير الشخصي فقط. يُمنع استخدام المنصة لأي غرض غير قانوني أو ينتهك حقوق الآخرين.
+                </p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">2. حقوق الملكية الفكرية</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    جميع الكورسات، المقالات، التصميمات، والشعارات الموجودة على المنصة هي ملكية فكرية لـ "كمشكاة" أو للجهات المانحة للمحتوى. يُمنع نسخ، توزيع، أو إعادة بيع أي جزء من المحتوى بدون إذن كتابي مسبق.
+                </p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">3. الحسابات</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    أنت مسؤول عن الحفاظ على سرية معلومات حسابك وكلمة المرور. المنصة غير مسؤولة عن أي خسارة أو ضرر ينتج عن فشلك في حماية معلومات تسجيل الدخول الخاصة بك.
+                </p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">4. التعديلات</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    نحتفظ بالحق في تعديل هذه الشروط والأحكام في أي وقت. سيتم نشر التغييرات على هذه الصفحة. استمرارك في استخدام المنصة بعد أي تعديلات يعني قبولك للشروط الجديدة.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm font-medium">
+        &copy; <span id="year"></span> كمشكاة تعلّم.
+    </footer>
+    <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+</body>
+</html>

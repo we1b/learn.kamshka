@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | الرئيسية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#015c3a',
+                            secondary: '#f4f1ea',
+                            accent: '#ea580c',
+                            light: '#ffffff',
+                            dark: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf9; display: flex; flex-direction: column; min-height: 100vh; }
+        .nav-link { transition: all 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; right: 0; background-color: #015c3a; transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #015c3a; font-weight: 700; }
+    </style>
+</head>
+<body class="text-brand-dark">
+
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="Untitled-1.jpg" alt="شعار كمشكاة" class="h-12 object-contain mix-blend-multiply">
+            </a>
+            <nav class="hidden md:flex gap-8 items-center font-medium text-slate-600">
+                <a href="index.html" class="nav-link active">الرئيسية</a>
+                <a href="about.html" class="nav-link hover:text-brand-primary">من نحن</a>
+                <a href="vision.html" class="nav-link hover:text-brand-primary">الرؤية</a>
+                <a href="contact.html" class="nav-link hover:text-brand-primary">تواصل معنا</a>
+            </nav>
+            <div class="hidden md:flex gap-3">
+                <button id="loginBtn" onclick="toggleAuth()" class="px-6 py-2 rounded-lg border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-secondary transition-colors">
+                    تسجيل الدخول
+                </button>
+                <button onclick="alert('صفحة إنشاء حساب - قريباً')" class="px-6 py-2 rounded-lg bg-brand-primary text-white font-bold hover:bg-opacity-90 shadow-md transition-colors">
+                    ابدأ مجاناً
+                </button>
+            </div>
+            <button class="md:hidden text-brand-primary focus:outline-none" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-secondary border-t border-brand-primary/10 p-4 flex flex-col gap-4 text-center font-medium text-slate-700">
+            <a href="index.html" class="text-brand-primary font-bold">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="vision.html">الرؤية</a>
+            <a href="contact.html">تواصل معنا</a>
+            <button id="mobileLoginBtn" onclick="toggleAuth()" class="mt-2 px-6 py-2 rounded-lg border-2 border-brand-primary text-brand-primary font-bold">تسجيل الدخول</button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="container mx-auto px-4 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-center md:text-right">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-brand-secondary text-brand-primary font-bold text-sm mb-6 border border-brand-primary/20">
+                        منصة كمشكاة التعليمية 🚀
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight mb-6">
+                        اسْتَعِنْ بِاللَّهِ وَلَا تَعْجَزْ <br><span class="text-brand-primary">وابدأ رحلة تعلمك</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        منصة تعليمية متكاملة بتقدملك كورسات عملية ومشاريع تطبيقية عشان تطور مهاراتك وتكون جاهز لسوق العمل بأفضل شكل.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <button onclick="checkAuthAndGo('courses-udemy.html')" class="px-8 py-3.5 rounded-lg bg-brand-primary text-white font-bold text-lg hover:bg-opacity-90 shadow-lg transition-all transform hover:-translate-y-1">
+                            تصفح الكورسات
+                        </button>
+                        <a href="about.html" class="px-8 py-3.5 rounded-lg bg-white border-2 border-slate-200 text-slate-700 font-bold text-lg hover:border-brand-primary hover:text-brand-primary transition-all text-center">
+                            اكتشف قصتنا
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative w-full h-80 md:h-[450px] bg-brand-secondary rounded-3xl overflow-hidden shadow-xl flex items-center justify-center border-8 border-white">
+                        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiMwMTVjM2EiLz48L3N2Zz4=')]"></div>
+                        <div class="text-center z-10 p-6">
+                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md text-brand-primary">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-primary mb-2">تطبيق عملي</h3>
+                            <p class="text-slate-600 font-medium">مشاريع حقيقية لسوق العمل</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brand-primary transform translate-x-2 group-hover:translate-x-0 transition-transform"></div>
+                    <div class="w-14 h-14 bg-brand-secondary text-brand-primary rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">محتوى عملي</h3>
+                    <p class="text-slate-600">كورسات مبنية على خبرة حقيقية في سوق العمل، مش مجرد تنظير.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-brand-accent transform translate-x-2 group-hover:translate-x-0 transition-transform"></div>
+                    <div class="w-14 h-14 bg-orange-50 text-brand-accent rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">تطبيق فوري</h3>
+                    <p class="text-slate-600">مشاريع وتحديات تخليك تطبق اللي اتعلمته فوراً وتبني بورتفوليو قوي.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-teal-600 transform translate-x-2 group-hover:translate-x-0 transition-transform"></div>
+                    <div class="w-14 h-14 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-3">مجتمع داعم</h3>
+                    <p class="text-slate-600">تواصل مع متعلمين زيك، شارك إنجازاتك ونافسهم في لوحة الشرف.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-slate-300 py-12 mt-auto border-t-4 border-brand-primary">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-b border-slate-700 pb-8">
+                <div>
+                    <img src="Untitled-1.jpg" alt="كمشكاة" class="h-14 mb-4 object-contain brightness-0 invert opacity-90">
+                    <p class="text-sm text-slate-400 leading-relaxed max-w-xs font-medium">
+                        منصة كمشكاة التعليمية. نقدم لك أفضل الكورسات والأدوات العملية لتطوير مهاراتك وبناء مستقبلك المهني.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-lg">روابط سريعة</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-brand-accent transition-colors">الرئيسية</a></li>
+                        <li><a href="about.html" class="hover:text-brand-accent transition-colors">من نحن</a></li>
+                        <li><a href="vision.html" class="hover:text-brand-accent transition-colors">الرؤية</a></li>
+                        <li><a href="#" onclick="alert('صفحة الكورسات - قريباً')" class="hover:text-brand-accent transition-colors">الكورسات</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 text-lg">تواصل معنا</h4>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="contact.html" class="hover:text-brand-accent transition-colors">اتصل بنا</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">الشروط والأحكام</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sm text-slate-500 font-medium">
+                &copy; <span id="year"></span> كمشكاة تعلّم. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function updateAuthUI() {
+            const isLoggedIn = localStorage.getItem('kameshkah_auth') === 'true';
+            const desktopBtn = document.getElementById('loginBtn');
+            const mobileBtn = document.getElementById('mobileLoginBtn');
+            
+            if (isLoggedIn) {
+                const text = 'تسجيل الخروج';
+                const classes = 'border-red-500 text-red-500 hover:bg-red-50';
+                
+                if(desktopBtn) { desktopBtn.innerText = text; desktopBtn.className = `px-6 py-2 rounded-lg border-2 font-bold transition-colors ${classes}`; }
+                if(mobileBtn) { mobileBtn.innerText = text; mobileBtn.className = `mt-2 px-6 py-2 rounded-lg border-2 font-bold ${classes}`; }
+            } else {
+                const text = 'تسجيل الدخول';
+                const classes = 'border-brand-primary text-brand-primary hover:bg-brand-secondary';
+                
+                if(desktopBtn) { desktopBtn.innerText = text; desktopBtn.className = `px-6 py-2 rounded-lg border-2 font-bold transition-colors ${classes}`; }
+                if(mobileBtn) { mobileBtn.innerText = text; mobileBtn.className = `mt-2 px-6 py-2 rounded-lg border-2 font-bold ${classes}`; }
+            }
+        }
+
+        function toggleAuth() {
+            const isLoggedIn = localStorage.getItem('kameshkah_auth') === 'true';
+            if (isLoggedIn) {
+                localStorage.setItem('kameshkah_auth', 'false');
+                alert('تم تسجيل الخروج.');
+            } else {
+                localStorage.setItem('kameshkah_auth', 'true');
+                alert('مرحباً بك في كمشكاة!');
+            }
+            updateAuthUI();
+        }
+
+        function checkAuthAndGo(url) {
+            if (localStorage.getItem('kameshkah_auth') === 'true') {
+                alert('سيتم تحويلك لصفحة الكورسات (جاري العمل عليها 🔥)');
+            } else {
+                alert('عذراً، يجب تسجيل الدخول أولاً.');
+            }
+        }
+
+        window.onload = updateAuthUI;
+    </script>
+</body>
+</html>

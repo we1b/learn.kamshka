@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | لوحة الشرف</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-[#fcfbf9] text-brand-dark font-sans flex flex-col min-h-screen">
+    
+    <div id="authLock" class="fixed inset-0 z-[100] bg-[#fcfbf9]/95 backdrop-blur-sm flex flex-col items-center justify-center hidden">
+        <h2 class="text-3xl font-bold text-brand-dark mb-4">المحتوى مقفول 🔒</h2>
+        <button onclick="localStorage.setItem('kameshkah_auth', 'true'); window.location.reload();" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-xl shadow-lg">تسجيل الدخول الآن</button>
+    </div>
+
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50 border-b border-brand-primary/10">
+        <div class="container mx-auto px-4 py-3 flex items-center gap-4">
+            <a href="dashboard.html" class="text-slate-400 hover:text-brand-primary p-2 transition-colors">
+                <svg class="w-6 h-6 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </a>
+            <h1 class="text-xl font-bold text-brand-dark">لوحة الشرف</h1>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center py-16">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <div class="w-24 h-24 bg-orange-50 text-brand-accent rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-brand-accent/20">
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+            </div>
+            <h2 class="text-4xl font-bold text-brand-dark mb-4">قريباً 🔥</h2>
+            <p class="text-lg text-slate-600 font-medium mb-8">استعد لمنافسة شريفة مع زملائك. جمع النقاط، تصدر القائمة، واربح هدايا حصرية.</p>
+            <a href="dashboard.html" class="px-8 py-3 bg-brand-primary text-white font-bold rounded-xl hover:bg-opacity-90 transition-colors shadow-md">الرجوع للوحة التحكم</a>
+        </div>
+    </main>
+
+    <script>
+        function checkAuth() { if (localStorage.getItem('kameshkah_auth') !== 'true') { document.getElementById('authLock').classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | الرؤية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+    <style> body { background-color: #fcfbf9; display: flex; flex-direction: column; min-height: 100vh; } .nav-link { transition: all 0.3s ease; position: relative; } .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; right: 0; background-color: #015c3a; transition: width 0.3s ease; } .nav-link:hover::after, .nav-link.active::after { width: 100%; } .nav-link.active { color: #015c3a; font-weight: 700; } </style>
+</head>
+<body class="text-brand-dark">
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2"><img src="Untitled-1.jpg" alt="شعار كمشكاة" class="h-12 object-contain mix-blend-multiply"></a>
+            <nav class="hidden md:flex gap-8 items-center font-medium text-slate-600">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="about.html" class="nav-link">من نحن</a>
+                <a href="vision.html" class="nav-link active">الرؤية</a>
+                <a href="contact.html" class="nav-link">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">رؤية المنصة</h1>
+                <div class="w-24 h-1.5 bg-brand-primary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-14 h-14 shrink-0 bg-brand-secondary text-brand-primary rounded-xl flex items-center justify-center border border-brand-primary/20"><span class="text-2xl font-bold">١</span></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-2">أثر مستدام</h3>
+                            <p class="text-slate-600 font-medium leading-relaxed">نؤمن بأن "إما أن تتغير أو يتكرر نفس اليوم إلى الأبد". رؤيتنا هي إحداث تغيير حقيقي وعميق.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative bg-brand-secondary rounded-[2rem] p-8 h-full min-h-[400px] flex items-center justify-center border-4 border-brand-primary/5 overflow-hidden">
+                    <div class="text-center relative z-10">
+                        <h2 class="text-3xl font-bold text-brand-primary leading-tight mb-4">"لا حَوْلَ وَلَا قُوَّةَ<br>إِلَّا بِاللَّهِ"</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

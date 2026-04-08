@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | ملاحظاتي</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-[#fcfbf9] text-brand-dark font-sans flex flex-col min-h-screen">
+    
+    <div id="authLock" class="fixed inset-0 z-[100] bg-[#fcfbf9]/95 backdrop-blur-sm flex flex-col items-center justify-center hidden">
+        <h2 class="text-3xl font-bold text-brand-dark mb-4">المحتوى مقفول 🔒</h2>
+        <button onclick="localStorage.setItem('kameshkah_auth', 'true'); window.location.reload();" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-xl shadow-lg">تسجيل الدخول الآن</button>
+    </div>
+
+    <!-- Header المخصص للداشبورد -->
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50 border-b border-brand-primary/10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="flex items-center gap-2 border-l border-slate-200 pl-6">
+                    <img src="Untitled-1.jpg" alt="شعار" class="h-10 object-contain mix-blend-multiply">
+                </a>
+                <nav class="hidden md:flex gap-6 items-center font-bold text-slate-500">
+                    <a href="dashboard.html" class="hover:text-brand-primary transition-colors">لوحة التحكم</a>
+                    <a href="notes.html" class="text-brand-primary">ملاحظاتي</a>
+                    <a href="courses.html" class="hover:text-brand-primary transition-colors">متابعة التعلم</a>
+                </nav>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="profile.html" class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg border-2 border-brand-secondary hover:border-brand-accent transition-colors">م</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-8">
+        <div class="container mx-auto px-4 max-w-5xl">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-brand-dark mb-2">ملاحظات الكورسات 📝</h1>
+                    <p class="text-slate-500 font-medium">قيد أفكارك وما تعلمته عشان ترجعله في أي وقت بسهولة.</p>
+                </div>
+                <a href="note-editor.html" class="px-6 py-3 bg-brand-primary text-white font-bold rounded-xl shadow-md hover:bg-opacity-90 transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    ملاحظة جديدة
+                </a>
+            </div>
+
+            <!-- Notes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Note 1 -->
+                <a href="note-editor.html" class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-primary/30 transition-all group block">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-teal-50 text-brand-primary text-xs font-bold px-2 py-1 rounded-md">أساسيات التصميم</span>
+                        <span class="text-slate-400 text-xs font-medium">منذ يومين</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2 group-hover:text-brand-primary transition-colors">ملخص نظرية الألوان</h3>
+                    <p class="text-sm text-slate-500 font-medium line-clamp-3 leading-relaxed mb-4">
+                        الألوان الأساسية هي الأحمر، الأزرق، والأصفر. عن طريق دمجهم بنسب معينة بنقدر نوصل للألوان الثانوية...
+                    </p>
+                </a>
+                
+                <!-- Note 2 -->
+                <a href="note-editor.html" class="bg-brand-secondary/50 p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-primary/30 transition-all group block">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-orange-50 text-brand-accent text-xs font-bold px-2 py-1 rounded-md">تطوير الذات</span>
+                        <span class="text-slate-400 text-xs font-medium">منذ أسبوع</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-dark mb-2 group-hover:text-brand-primary transition-colors">قاعدة الـ 2 دقيقة</h3>
+                    <p class="text-sm text-slate-500 font-medium line-clamp-3 leading-relaxed mb-4">
+                        أي مهمة تقدر تخلصها في دقيقتين أو أقل، اعملها فوراً وماتأجلهاش. دي قاعدة سحرية لتنظيف الدماغ من المهام الصغيرة المتراكمة.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function checkAuth() { if (localStorage.getItem('kameshkah_auth') !== 'true') { document.getElementById('authLock').classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>

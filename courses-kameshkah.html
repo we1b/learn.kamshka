@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | كورسات المنصة</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-brand-primary text-white font-sans flex flex-col min-h-screen relative overflow-hidden">
+    <!-- Decor -->
+    <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmNGYxZWEiLz48L3N2Zz4=')]"></div>
+
+    <header class="relative z-10 py-6">
+        <div class="container mx-auto px-4">
+            <a href="courses.html" class="inline-flex items-center gap-2 text-brand-secondary hover:text-white font-bold transition-colors">
+                <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                الرجوع للكورسات
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center relative z-10">
+        <div class="text-center px-4 max-w-2xl">
+            <div class="text-8xl mb-6 animate-bounce">🔥</div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-brand-secondary">قريباً جداً</h1>
+            <p class="text-xl md:text-2xl text-brand-secondary/80 font-medium mb-10 leading-relaxed">
+                بنجهز لك تجربة أقوى بكتير… استنى المفاجأة 👀<br>
+                كورسات متكاملة بتدمج بين الجانب التقني وبناء العادات.
+            </p>
+            <a href="index.html" class="inline-block px-8 py-4 bg-white text-brand-primary rounded-xl font-bold text-lg hover:bg-brand-secondary shadow-xl transition-all transform hover:-translate-y-1">
+                العودة للرئيسية
+            </a>
+        </div>
+    </main>
+</body>
+</html>

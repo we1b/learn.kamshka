@@ -1,0 +1,66 @@
+/* تنسيقات خاصة بلوحة التحكم */
+
+/* كروت الداشبورد */
+.dashboard-card {
+    background-color: white;
+    border-radius: 2rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* شريط التقدم (البروجرس بار) المخصص */
+.progress-bar-container {
+    width: 100%;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    height: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--brand-primary);
+    border-radius: 9999px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar-fill.accent {
+    background-color: var(--brand-accent);
+}
+
+/* متتبع العادات (التشيك بوكس) */
+.habit-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--brand-primary);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.habit-label {
+    transition: background-color 0.2s ease;
+}
+
+.habit-label:hover {
+    background-color: #f8fafc;
+}
+
+/* تأثير التوهج لكارت التحديات */
+.challenge-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--brand-accent);
+    filter: blur(60px);
+    opacity: 0.3;
+    border-radius: 50%;
+    top: -50px;
+    right: -50px;
+    pointer-events: none;
+}

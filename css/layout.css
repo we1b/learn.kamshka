@@ -1,0 +1,60 @@
+/* تنسيقات الروابط في القائمة العلوية (الهيدر) */
+.nav-link {
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* خط التحريك تحت الروابط */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    right: 0;
+    background-color: var(--brand-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* حالة الرابط النشط */
+.nav-link.active {
+    color: var(--brand-primary);
+    font-weight: 700;
+}
+
+/* تأثيرات الهيدر عند النزول بالصفحة */
+header.sticky {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(1, 92, 58, 0.1);
+}
+
+/* تخصيص حقول الإدخال (الأنبوت) */
+.input-field {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 2px solid #e2e8f0;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+}
+
+.input-field:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(1, 92, 58, 0.1);
+}
+
+/* الفوتر */
+footer {
+    border-top-width: 4px;
+    border-top-style: solid;
+    border-top-color: var(--brand-primary);
+}

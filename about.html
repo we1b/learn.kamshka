@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | من نحن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#015c3a',
+                            secondary: '#f4f1ea',
+                            accent: '#ea580c',
+                            light: '#ffffff',
+                            dark: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fcfbf9; display: flex; flex-direction: column; min-height: 100vh; }
+        .nav-link { transition: all 0.3s ease; position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; right: 0; background-color: #015c3a; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: #015c3a; font-weight: 700; }
+    </style>
+</head>
+<body class="text-brand-dark">
+
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="Untitled-1.jpg" alt="شعار كمشكاة" class="h-12 object-contain mix-blend-multiply">
+            </a>
+            <nav class="hidden md:flex gap-8 items-center font-medium text-slate-600">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="about.html" class="nav-link active">من نحن</a>
+                <a href="vision.html" class="nav-link hover:text-brand-primary">الرؤية</a>
+                <a href="contact.html" class="nav-link hover:text-brand-primary">تواصل معنا</a>
+            </nav>
+            <div class="hidden md:flex gap-3">
+                <button id="loginBtn" onclick="toggleAuth()" class="px-6 py-2 rounded-lg border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-secondary transition-colors">
+                    تسجيل الدخول
+                </button>
+            </div>
+            <button class="md:hidden text-brand-primary focus:outline-none" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-secondary border-t border-brand-primary/10 p-4 flex flex-col gap-4 text-center font-medium text-slate-700">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html" class="text-brand-primary font-bold">من نحن</a>
+            <a href="vision.html">الرؤية</a>
+            <a href="contact.html">تواصل معنا</a>
+            <button id="mobileLoginBtn" onclick="toggleAuth()" class="mt-2 px-6 py-2 rounded-lg border-2 border-brand-primary text-brand-primary font-bold">تسجيل الدخول</button>
+        </div>
+    </header>
+
+    <main class="flex-grow py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">من نحن</h1>
+                <div class="w-24 h-1.5 bg-brand-accent mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-14 border border-brand-secondary relative overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-48 h-48 bg-brand-secondary rounded-full opacity-50 blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-teal-50 rounded-full opacity-50 blur-3xl"></div>
+                
+                <div class="relative z-10 space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-brand-primary mb-4 flex items-center gap-2">
+                            <span class="w-2 h-8 bg-brand-accent rounded-full block"></span>
+                            صديق حكيم للشباب العربي
+                        </h2>
+                        <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                            إحنا في كمشكاة مش مجرد منصة، إحنا مساحة آمنة وصديق حكيم للشباب العربي. هدفنا ناخد بإيدك وسط زحمة الحياة وتشتت السوشيال ميديا، ونقدم لك أدوات عملية مش مجرد تحفيز مزيف بيتبخر.
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-secondary/50 p-6 rounded-2xl border border-brand-primary/10">
+                        <h2 class="text-2xl font-bold text-brand-primary mb-4">لماذا "كمشكاة"؟</h2>
+                        <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                            اسم كمشكاة مستوحى من <span class="text-brand-accent font-bold">آية النور في القرآن الكريم</span>. المشكاة هي التجويف اللي بيحمي المصباح ويعكس نوره ويكبره عشان ينور المكان كله.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-brand-primary mb-4 flex items-center gap-2">
+                            <span class="w-2 h-8 bg-teal-600 rounded-full block"></span>
+                            مهمتنا ورسالتنا
+                        </h2>
+                        <p class="text-lg text-slate-700 leading-relaxed font-medium">
+                            ودي بالظبط مهمتنا.. بناخد نور الوحي والسنة وعلوم تطوير الذات، ونوجهه ليك كدليل وبوصلة تنور طريقك. عشان تنجح في دنيتك بسلام نفسي، وتبني عادات حقيقية بهدوء ومن غير أي توتر أو ضغط.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-brand-dark text-slate-300 py-12 mt-auto border-t-4 border-brand-primary">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm font-medium">&copy; <span id="year"></span> كمشكاة تعلّم. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        function updateAuthUI() { /* ... */ }
+        function toggleAuth() { /* ... */ }
+    </script>
+</body>
+</html>

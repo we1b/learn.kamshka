@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | الملف الشخصي</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-[#fcfbf9] text-brand-dark font-sans flex flex-col min-h-screen">
+    
+    <div id="authLock" class="fixed inset-0 z-[100] bg-[#fcfbf9]/95 backdrop-blur-sm flex flex-col items-center justify-center hidden">
+        <h2 class="text-3xl font-bold text-brand-dark mb-4">المحتوى مقفول 🔒</h2>
+        <button onclick="localStorage.setItem('kameshkah_auth', 'true'); window.location.reload();" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-xl shadow-lg">تسجيل الدخول الآن</button>
+    </div>
+
+    <!-- Header المخصص للداشبورد -->
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50 border-b border-brand-primary/10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="flex items-center gap-2 border-l border-slate-200 pl-6">
+                    <img src="Untitled-1.jpg" alt="شعار" class="h-10 object-contain mix-blend-multiply">
+                </a>
+                <nav class="hidden md:flex gap-6 items-center font-bold text-slate-500">
+                    <a href="dashboard.html" class="hover:text-brand-primary transition-colors">لوحة التحكم</a>
+                </nav>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="settings.html" class="p-2 text-slate-400 hover:text-brand-primary transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow py-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            
+            <!-- معلومات البروفايل الأساسية -->
+            <div class="bg-white rounded-[2.5rem] border border-slate-200 shadow-sm p-8 md:p-12 mb-8 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-32 bg-brand-secondary/50 border-b border-brand-primary/5"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-32 h-32 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-5xl border-8 border-white shadow-md mx-auto mb-4 mt-8">م</div>
+                    <h1 class="text-3xl font-bold text-brand-dark mb-1">مصطفى عبد الناصر</h1>
+                    <p class="text-slate-500 font-medium mb-6">متعلم شغوف ومستمر في التطوير</p>
+                    
+                    <div class="flex justify-center gap-6 text-center">
+                        <div>
+                            <span class="block text-2xl font-bold text-brand-dark">3</span>
+                            <span class="text-sm font-medium text-slate-500">كورسات مكتملة</span>
+                        </div>
+                        <div class="w-px h-10 bg-slate-200"></div>
+                        <div>
+                            <span class="block text-2xl font-bold text-brand-dark">14</span>
+                            <span class="text-sm font-medium text-slate-500">يوم استمرارية</span>
+                        </div>
+                        <div class="w-px h-10 bg-slate-200"></div>
+                        <div>
+                            <span class="block text-2xl font-bold text-brand-dark">12</span>
+                            <span class="text-sm font-medium text-slate-500">ملاحظة مدونة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الشهادات والإنجازات -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-brand-dark mb-4 px-2">إنجازاتي 🏆</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex items-center gap-4 group">
+                        <div class="w-16 h-16 bg-brand-secondary text-brand-primary rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark text-lg mb-1">أساسيات التصميم الجرافيكي</h4>
+                            <span class="text-xs text-brand-primary font-bold bg-brand-secondary px-2 py-1 rounded-md">اكتمل في أغسطس 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="localStorage.setItem('kameshkah_auth', 'false'); window.location.href='index.html';" class="text-red-500 font-bold hover:bg-red-50 px-6 py-3 rounded-xl transition-colors border-2 border-transparent hover:border-red-100">
+                    تسجيل الخروج من الحساب
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function checkAuth() { if (localStorage.getItem('kameshkah_auth') !== 'true') { document.getElementById('authLock').classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>

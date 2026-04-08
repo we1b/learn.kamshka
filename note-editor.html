@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | محرر الملاحظات</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-[#fcfbf9] text-brand-dark font-sans flex flex-col min-h-screen">
+    
+    <div id="authLock" class="fixed inset-0 z-[100] bg-[#fcfbf9]/95 backdrop-blur-sm flex flex-col items-center justify-center hidden">
+        <h2 class="text-3xl font-bold text-brand-dark mb-4">المحتوى مقفول 🔒</h2>
+        <button onclick="localStorage.setItem('kameshkah_auth', 'true'); window.location.reload();" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-xl shadow-lg">تسجيل الدخول الآن</button>
+    </div>
+
+    <!-- Header المبسط للمحرر -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="notes.html" class="text-slate-400 hover:text-brand-primary p-2 transition-colors">
+                    <svg class="w-6 h-6 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </a>
+                <span class="font-bold text-slate-400">حفظ تلقائي...</span>
+            </div>
+            <button onclick="alert('تم الحفظ والرجوع!'); window.location.href='notes.html';" class="px-6 py-2 bg-brand-primary text-white font-bold rounded-lg hover:bg-opacity-90 shadow-sm transition-colors">
+                حفظ وإنهاء
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow py-8">
+        <div class="container mx-auto px-4 max-w-4xl h-full flex flex-col">
+            <div class="bg-white rounded-[2rem] border border-slate-200 shadow-sm flex-grow p-8 md:p-12 flex flex-col">
+                <!-- تصنيف الملاحظة -->
+                <div class="mb-6 flex gap-2">
+                    <select class="bg-brand-secondary/50 text-brand-primary font-bold px-4 py-2 rounded-lg outline-none border border-transparent focus:border-brand-primary/30 transition-colors cursor-pointer text-sm">
+                        <option>بدون تصنيف</option>
+                        <option selected>أساسيات التصميم</option>
+                        <option>تطوير الذات</option>
+                        <option>تصميمات سوشيال ميديا</option>
+                    </select>
+                </div>
+                
+                <!-- عنوان الملاحظة -->
+                <input type="text" placeholder="عنوان الملاحظة..." value="ملخص نظرية الألوان" class="text-3xl md:text-4xl font-bold text-brand-dark outline-none mb-6 placeholder-slate-300 w-full bg-transparent">
+                
+                <hr class="border-slate-100 mb-6">
+                
+                <!-- محتوى الملاحظة -->
+                <textarea placeholder="اكتب أفكارك وما تعلمته هنا براحتك..." class="w-full flex-grow resize-none outline-none text-lg text-slate-700 leading-relaxed font-medium placeholder-slate-300 bg-transparent min-h-[400px]">الألوان الأساسية هي الأحمر، الأزرق، والأصفر. عن طريق دمجهم بنسب معينة بنقدر نوصل للألوان الثانوية (البرتقالي، الأخضر، البنفسجي).
+
+مهم جداً أراعي عجلة الألوان عشان أطلع بباليت متناسقة تريح عين المشاهد.</textarea>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function checkAuth() { if (localStorage.getItem('kameshkah_auth') !== 'true') { document.getElementById('authLock').classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+        window.onload = checkAuth;
+    </script>
+</body>
+</html>

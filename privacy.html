@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | سياسة الخصوصية</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { primary: '#015c3a', secondary: '#f4f1ea', accent: '#ea580c', light: '#ffffff', dark: '#1e293b' } }, fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], } } } }
+    </script>
+</head>
+<body class="bg-[#fcfbf9] text-brand-dark font-sans flex flex-col min-h-screen">
+    
+    <header class="bg-brand-light shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-brand-primary">سياسة الخصوصية</h1>
+            <a href="index.html" class="text-sm font-bold text-slate-500 hover:text-brand-primary transition-colors">العودة للرئيسية</a>
+        </div>
+    </header>
+
+    <main class="flex-grow py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 prose prose-slate prose-a:text-brand-primary max-w-none">
+                <p class="text-sm text-slate-400 font-bold mb-8">آخر تحديث: أغسطس 2025</p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">1. جمع المعلومات</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    نحن في كمشكاة نأخذ خصوصيتك بجدية تامة. نقوم بجمع المعلومات التي تقدمها لنا طواعية عند إنشاء حساب، مثل الاسم والبريد الإلكتروني، لتوفير تجربة مخصصة لك على المنصة.
+                </p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">2. استخدام المعلومات</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    نستخدم معلوماتك لتقديم الخدمات، تحسين تجربة المستخدم، والتواصل معك بخصوص التحديثات والكورسات الجديدة (إذا اشتركت في النشرة البريدية). نحن لا نبيع أو نشارك معلوماتك الشخصية مع أي طرف ثالث لأغراض تسويقية.
+                </p>
+
+                <h2 class="text-2xl font-bold text-brand-dark mb-4 mt-8">3. حماية البيانات</h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-6">
+                    نتخذ إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به أو التعديل أو الإفصاح أو الإتلاف. 
+                </p>
+
+                <hr class="my-8 border-slate-200">
+                <p class="text-sm text-slate-500 font-medium text-center">
+                    إذا كان لديك أي أسئلة حول سياسة الخصوصية، يرجى <a href="contact.html">التواصل معنا</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-sm font-medium">
+        &copy; <span id="year"></span> كمشكاة تعلّم.
+    </footer>
+    <script> document.getElementById('year').textContent = new Date().getFullYear(); </script>
+</body>
+</html>
